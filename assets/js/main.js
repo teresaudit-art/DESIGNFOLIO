@@ -197,6 +197,15 @@ function initHeroAnimations() {
     ease: "sine.inOut",
   });
 
+  gsap.to(".btn", {
+    y: 6,
+    duration: 2,
+    repeat: -1,
+    yoyo: true,
+    ease: "sine.inOut",
+    stagger: 0.2,
+  });
+
   /**
    * SCROLLTRIGGER PARALLAX EFFECT
    *

@@ -7,16 +7,18 @@
    1. CSS Custom Properties
    -------------------------------------------------------------------------- */
 :root {
-  --bs-body-bg: #0f0f0f;
+  --bs-body-bg: #ffb6d5;
   --bs-body-color: #f5f5f5;
   --bs-primary: #6366f1;
   --bs-primary-rgb: 99, 102, 241;
 
   /* Custom tokens */
-  --color-bg-alt: #1a1a1a;
+  --color-bg-alt: rgb(156, 203, 248);
   --color-muted: #6c757d;
   --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
 }
+
+@import url("https://fonts.googleapis.com/css2?family=Schoolbell&display=swap");
 
 /* --------------------------------------------------------------------------
    2. Base Overrides
@@ -24,6 +26,7 @@
 body {
   background-color: var(--bs-body-bg);
   color: var(--bs-body-color);
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .bg-dark {
@@ -40,14 +43,14 @@ body {
    3. Navigation
    -------------------------------------------------------------------------- */
 .navbar {
-  background: rgba(15, 15, 15, 0.85);
+  background: #ffb6d5;
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   transition: background 0.3s;
 }
 
 .navbar.scrolled {
-  background: rgba(15, 15, 15, 0.95);
+  background: rgba(56, 139, 247, 0.95);
 }
 
 .nav-link {
@@ -76,20 +79,49 @@ body {
    4. Hero Section
    -------------------------------------------------------------------------- */
 .hero {
-  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  background: linear-gradient(180deg, #9fd9ff 0%, #cfefff 60%, #f7fbff 100%);
 }
-
+.hero {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+}
 .hero-bg {
   background: inherit;
   z-index: 0;
 }
+.hero .container {
+  position: relative;
+  z-index: 2;
+}
+
+h1,
+.hero-title,
+.navbar-brand {
+  font-family: "Schoolbell", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
 
 /* Floating shapes */
+
 .floating-shapes {
   position: absolute;
   inset: 0;
-  overflow: hidden;
   z-index: 0;
+}
+.floating-shapes img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* llena sin deformar */
+  object-position: center;
+  position: absolute;
+  inset: 0;
+}
+
+.floating-shapes img {
+  opacity: 0.85;
+  filter: saturate(1.05);
 }
 
 .shape {
@@ -243,7 +275,7 @@ body {
 
 /* Badge styling */
 .bg-primary-subtle {
-  background-color: rgba(99, 102, 241, 0.15) !important;
+  background-color: #ffb6d5 !important;
 }
 
 .text-primary {
@@ -266,27 +298,29 @@ body {
    8. Buttons
    -------------------------------------------------------------------------- */
 .btn-primary {
-  background: var(--bs-primary);
-  border-color: var(--bs-primary);
-  padding: 0.75rem 2rem;
+  background: #ffb6d5;
+  border: none;
+  color: #7a2f4a;
+  border-radius: 999px;
+  padding: 0.9rem 2.5rem;
   font-weight: 600;
-  transition: transform 0.3s, box-shadow 0.3s;
 }
-
 .btn-primary:hover {
-  background: #818cf8;
-  border-color: #818cf8;
-  transform: translateY(-2px);
-  box-shadow: 0 10px 20px rgba(99, 102, 241, 0.3);
+  transform: scale(5);
 }
 
 .btn-outline-light {
-  padding: 0.75rem 2rem;
-  font-weight: 600;
+  background: #ffffff;
+  color: #7a7a7a;
+  border: none;
+  border-radius: 999px;
+  box-shadow: inset -6px -6px 12px rgba(255, 255, 255, 0.9),
+    inset 6px 6px 12px rgba(200, 200, 200, 0.4), 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
 .btn-outline-light:hover {
-  transform: translateY(-2px);
+  color: #ff7eb6;
+  transform: translateY(-3px);
 }
 
 /* --------------------------------------------------------------------------
