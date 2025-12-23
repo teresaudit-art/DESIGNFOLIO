@@ -1,40 +1,46 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Grade 2 Demo: Bootstrap + GSAP Scroll</title>
+    <title>Dreamy Tarai</title>
 
-    <!-- Bootstrap CSS -->
+    <!-- Bootstrap -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
 
-    <!-- Custom Styles -->
-    <link rel="stylesheet" href="./assets/css/index.css" />
+    <!-- Tipografía ORIGINAL -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Schoolbell&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/index.css" />
   </head>
+
   <body data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="100">
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg fixed-top zara-nav">
+    <!-- NAV -->
+    <nav class="navbar navbar-expand-xl navbar-dark fixed-top zara-nav">
       <div class="container-fluid px-4">
-        <!-- Burger -->
         <button
-          class="navbar-toggler border-0"
+          class="navbar-toggler"
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#navbarNav"
-          aria-label="Menu"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
         >
-          <span class="zara-burger"></span>
-          <span class="zara-burger"></span>
-          <span class="zara-burger"></span>
+          <span class="navbar-toggler-icon"></span>
         </button>
 
-        <!-- Logo -->
-        <a class="navbar-brand mx-auto mx-lg-0" href="#hero"> Dreamy Tarai </a>
+        <a class="navbar-brand" href="#hero">Dreamy Tarai</a>
 
-        <!-- Menu -->
         <div
           class="collapse navbar-collapse justify-content-end"
           id="navbarNav"
@@ -42,13 +48,13 @@
           <ul class="navbar-nav zara-menu">
             <li class="nav-item"><a class="nav-link" href="#hero">Home</a></li>
             <li class="nav-item">
-              <a class="nav-link" href="#about">About</a>
+              <a class="nav-link" href="#about">Sobre mí</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#projects">Projects</a>
+              <a class="nav-link" href="#projects">Mis proyectos</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#contact">Contact</a>
+              <a class="nav-link" href="#contact">Contacto</a>
             </li>
           </ul>
         </div>
@@ -56,100 +62,109 @@
     </nav>
 
     <main>
-      <!-- Hero Section -->
-      <section
-        id="hero"
-        class="hero min-vh-100 d-flex align-items-center position-relative overflow-hidden"
-      >
-        <!-- Parallax Background -->
-        <div class="hero-bg position-absolute w-100 h-100"></div>
-
+      <!-- HERO -->
+      <section id="hero" class="hero d-flex align-items-center">
+        <div class="hero-bg"></div>
         <div class="hero-overlay"></div>
 
-        <!-- Floating shapes (GSAP animated) -->
         <div class="floating-shapes">
           <img
             src="https://ik.imagekit.io/nvzgvhlvdw/SAW%20PAGINA%20ANALISIS/NUBES.gif"
+            alt="nubes"
           />
         </div>
 
-        <div class="container position-relative z-1 text-center text-white">
-          <h1 class="display-1 fw-bold hero-title">Dreamy tarai</h1>
-          <p class="lead hero-subtitle mb-4">
-            Tus sueños convertidos en diseños
-          </p>
+        <div class="container text-center text-white position-relative z-1">
+          <h1 class="hero-title">Dreamy Tarai</h1>
+          <p class="hero-subtitle">Tus sueños convertidos en diseños</p>
+
           <div class="hero-cta">
             <a href="#projects" class="btn btn-primary btn-lg me-3"
               >Proyectos</a
             >
             <a href="#contact" class="btn btn-outline-light btn-lg"
-              >¡Hablame!</a
+              >¡Háblame!</a
             >
           </div>
         </div>
 
-        <!-- Scroll indicator -->
-        <div
-          class="scroll-indicator position-absolute bottom-0 start-50 translate-middle-x mb-4"
-        >
+        <div class="scroll-indicator">
           <div class="mouse"></div>
         </div>
       </section>
 
-      <!-- About Section -->
+      <!-- ABOUT -->
       <section id="about" class="py-5 py-lg-6 bg-dark">
-        <div class="container">
-          <div class="row align-items-center g-5">
-            <div class="col-lg-6">
-              <div class="about-image gsap-reveal">
-                <img
-                  src="https://picsum.photos/600/700?random=10"
-                  alt="Profile"
-                  class="img-fluid rounded-4 shadow-lg"
-                />
+        <div class="row align-items-stretch g-5">
+          <!-- IZQUIERDA: FOTO -->
+          <div
+            class="col-lg-5 gsap-reveal d-flex justify-content-center align-items-center"
+          >
+            <img
+              src="https://ik.imagekit.io/nvzgvhlvdw/designfolio/foto%20polaroid.png"
+              class="about-img"
+              alt="foto polaroid de teresa"
+            />
+          </div>
+
+          <!-- DERECHA: NOTA + SKILLS -->
+          <div
+            class="col-lg-7 gsap-reveal d-flex flex-column justify-content-center"
+          >
+            <!-- NOTA -->
+            <div class="note-wrapper mb-4">
+              <img
+                src="https://ik.imagekit.io/nvzgvhlvdw/designfolio/nota.avif"
+                alt="nota escrita"
+                class="note-img"
+              />
+
+              <div class="note-text">
+                <h2>Sobre mí</h2>
+                <p>
+                  ¡Hola! Soy Teresa, una diseñadora gráfica madrileña a la que
+                  le encanta jugar con las nuevas tendencias y reinterpretar lo
+                  ya visto, siempre buscando dar un toque muy personal a cada
+                  proyecto. Me encanta trabajar en equipo, porque creo que las
+                  mejores ideas salen cuando nos divertimos creando juntos.
+                </p>
               </div>
             </div>
-            <div class="col-lg-6">
-              <h2 class="display-5 fw-bold mb-4 gsap-reveal">About Me</h2>
-              <p class="lead text-muted mb-4 gsap-reveal">
-                I'm a creative developer passionate about building beautiful,
-                functional, and accessible digital experiences.
-              </p>
-              <p class="text-muted gsap-reveal">
-                With 7+ years of experience spanning front-end development,
-                UI/UX design, and motion graphics, I bring a unique perspective
-                to every project. I believe in the power of animation to enhance
-                user experience without sacrificing performance.
-              </p>
 
-              <!-- Skills with animated progress -->
-              <div class="skills mt-5">
-                <div class="skill-item gsap-reveal mb-3">
-                  <div class="d-flex justify-content-between mb-2">
-                    <span class="fw-semibold">React / Next.js</span>
-                    <span class="text-muted">95%</span>
-                  </div>
-                  <div class="progress" style="height: 8px">
-                    <div class="progress-bar skill-bar" data-width="95"></div>
-                  </div>
+            <!-- SKILLS -->
+            <div class="skills-wrapper">
+              <div class="skill gsap-reveal mb-3">
+                <span>Adobe Illustrator</span>
+                <div class="progress">
+                  <div class="progress-bar skill-bar" data-width="90"></div>
                 </div>
-                <div class="skill-item gsap-reveal mb-3">
-                  <div class="d-flex justify-content-between mb-2">
-                    <span class="fw-semibold">GSAP / Animation</span>
-                    <span class="text-muted">90%</span>
-                  </div>
-                  <div class="progress" style="height: 8px">
-                    <div class="progress-bar skill-bar" data-width="90"></div>
-                  </div>
+              </div>
+
+              <div class="skill gsap-reveal mb-3">
+                <span>Adobe Photoshop</span>
+                <div class="progress">
+                  <div class="progress-bar skill-bar" data-width="85"></div>
                 </div>
-                <div class="skill-item gsap-reveal mb-3">
-                  <div class="d-flex justify-content-between mb-2">
-                    <span class="fw-semibold">Node.js / Express</span>
-                    <span class="text-muted">85%</span>
-                  </div>
-                  <div class="progress" style="height: 8px">
-                    <div class="progress-bar skill-bar" data-width="85"></div>
-                  </div>
+              </div>
+
+              <div class="skill gsap-reveal mb-3">
+                <span>Adobe Première</span>
+                <div class="progress">
+                  <div class="progress-bar skill-bar" data-width="70"></div>
+                </div>
+              </div>
+
+              <div class="skill gsap-reveal mb-3">
+                <span>Adobe InDesign</span>
+                <div class="progress">
+                  <div class="progress-bar skill-bar" data-width="80"></div>
+                </div>
+              </div>
+
+              <div class="skill gsap-reveal">
+                <span>Cinema 4D</span>
+                <div class="progress">
+                  <div class="progress-bar skill-bar" data-width="60"></div>
                 </div>
               </div>
             </div>
@@ -157,271 +172,116 @@
         </div>
       </section>
 
-      <!-- Projects Section -->
-
+      <!-- PROJECTS -->
       <section id="projects" class="py-5 py-lg-6">
+        <h2 class="fw-bold">Mis Proyectos</h2>
+
         <div class="container">
-          <div class="text-center mb-5">
-            <h2 class="display-5 fw-bold gsap-reveal">Featured Projects</h2>
-            <p class="lead text-muted gsap-reveal">
-              A selection of my recent work
+          <div id="projects-intro">
+            <div class="infoproyects">
+              <h3>Edición especial de "Alicia en el País de las Maravillas"</h3>
+              <p class="alicia">
+                Este proyecto consistió en diseñar la portada, el lomo, la
+                contraportada y el interior de una edición especial de Alicia en
+                el País de las Maravillas. El objetivo era capturar la magia y
+                la esencia lúdica del libro, creando una experiencia visual
+                cohesiva y envolvente de principio a fin.
+              </p>
+            </div>
+            <div class="project-slide active">
+              <img
+                src="https://ik.imagekit.io/nvzgvhlvdw/designfolio/solo%20portada%20alicia_.png"
+                alt=""
+              />
+            </div>
+            <div class="project-slide">
+              <img
+                src="https://ik.imagekit.io/nvzgvhlvdw/designfolio/libro%20conejo.png"
+                alt=""
+              />
+            </div>
+            <div class="project-slide">
+              <img
+                src="https://ik.imagekit.io/nvzgvhlvdw/designfolio/CUBIERTA%20ALICIA%20FINAL.png"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+        <div class="video-container">
+          <video autoplay loop muted playsinline width="60%" class="loewe">
+            <source
+              src="https://ik.imagekit.io/nvzgvhlvdw/designfolio/logo%20lowew.mp4"
+              type="video/mp4"
+            />
+          </video>
+        </div>
+      </section>
+      <section id="gallery" class="py-5">
+        <div class="container">
+          <div class="infoproyects">
+            <h3>ALTER EGO: proyecto fotográfico</h3>
+            <p class="alicia">
+              El proyecto fotográfico “Alter ego” explora la sexualidad y sus
+              múltiples dimensiones: nuestras relaciones, nuestro cuerpo y
+              nuestra mente. Cada participante creó su propio alter ego y una
+              historia única que refleja situaciones reales. La exposición
+              invita a reflexionar sobre quiénes somos y quiénes deseamos ser,
+              dejando atrás inseguridades y miedos.
             </p>
           </div>
-
-          <section id="projects-intro">
-            <div class="project-slide">
-              <img src="img/proyecto1.jpg" alt="Proyecto 1" />
-              <h2>Proyecto Twin Peaks</h2>
-            </div>
-
-            <div class="project-slide">
-              <img src="img/proyecto2.jpg" alt="Proyecto 2" />
-              <h2>Editorial Moda</h2>
-            </div>
-
-            <div class="project-slide">
-              <img src="img/proyecto3.jpg" alt="Proyecto 3" />
-              <h2>Dirección de Arte</h2>
-            </div>
-          </section>
-
-          <div class="row g-4">
-            <!-- Project Card 1 -->
-            <div class="col-md-6 col-lg-4">
-              <article class="card project-card h-100 border-0 shadow-sm">
-                <div class="card-img-wrapper overflow-hidden">
-                  <img
-                    src="https://picsum.photos/400/300?random=1"
-                    class="card-img-top"
-                    alt="E-commerce Platform"
-                  />
-                </div>
-                <div class="card-body">
-                  <h3 class="card-title h5">E-commerce Platform</h3>
-                  <p class="card-text text-muted small">
-                    Full-stack e-commerce solution with real-time inventory and
-                    Stripe integration.
+          <div class="row g-4 justify-content-center">
+            <!-- Imagen 1 -->
+            <div class="col-md-4 col-sm-6">
+              <div class="image-card">
+                <img
+                  src="https://ik.imagekit.io/nvzgvhlvdw/designfolio/emilia"
+                  alt="Imagen 1"
+                />
+                <div class="overlay">
+                  <p class="overlay-text">
+                    Emilia se siente atrapada debido a la estricta ideología de
+                    sus padres, lo que limita su exploración de la sexualidad.
+                    Su habitación funciona como una celda, intensificando sus
+                    sueños de liberarse y encontrarse a sí misma, mientras
+                    debate entre su felicidad y la de su familia.
                   </p>
-                  <div class="d-flex flex-wrap gap-2">
-                    <span class="badge bg-primary-subtle text-primary"
-                      >React</span
-                    >
-                    <span class="badge bg-primary-subtle text-primary"
-                      >Node.js</span
-                    >
-                    <span class="badge bg-primary-subtle text-primary"
-                      >MongoDB</span
-                    >
-                  </div>
                 </div>
-              </article>
-            </div>
-
-            <!-- Project Card 2 -->
-            <div class="col-md-6 col-lg-4">
-              <article class="card project-card h-100 border-0 shadow-sm">
-                <div class="card-img-wrapper overflow-hidden">
-                  <img
-                    src="https://picsum.photos/400/300?random=2"
-                    class="card-img-top"
-                    alt="Dashboard UI"
-                  />
-                </div>
-                <div class="card-body">
-                  <h3 class="card-title h5">Analytics Dashboard</h3>
-                  <p class="card-text text-muted small">
-                    Real-time data visualization with interactive charts and
-                    dark mode.
-                  </p>
-                  <div class="d-flex flex-wrap gap-2">
-                    <span class="badge bg-primary-subtle text-primary"
-                      >D3.js</span
-                    >
-                    <span class="badge bg-primary-subtle text-primary"
-                      >WebSocket</span
-                    >
-                    <span class="badge bg-primary-subtle text-primary"
-                      >GSAP</span
-                    >
-                  </div>
-                </div>
-              </article>
-            </div>
-
-            <!-- Project Card 3 -->
-            <div class="col-md-6 col-lg-4">
-              <article class="card project-card h-100 border-0 shadow-sm">
-                <div class="card-img-wrapper overflow-hidden">
-                  <img
-                    src="https://picsum.photos/400/300?random=3"
-                    class="card-img-top"
-                    alt="Mobile App"
-                  />
-                </div>
-                <div class="card-body">
-                  <h3 class="card-title h5">Fitness Mobile App</h3>
-                  <p class="card-text text-muted small">
-                    Cross-platform fitness tracker with workout plans and
-                    progress analytics.
-                  </p>
-                  <div class="d-flex flex-wrap gap-2">
-                    <span class="badge bg-primary-subtle text-primary"
-                      >React Native</span
-                    >
-                    <span class="badge bg-primary-subtle text-primary"
-                      >Firebase</span
-                    >
-                  </div>
-                </div>
-              </article>
-            </div>
-
-            <!-- Project Card 4 -->
-            <div class="col-md-6 col-lg-4">
-              <article class="card project-card h-100 border-0 shadow-sm">
-                <div class="card-img-wrapper overflow-hidden">
-                  <img
-                    src="https://picsum.photos/400/300?random=4"
-                    class="card-img-top"
-                    alt="Portfolio Site"
-                  />
-                </div>
-                <div class="card-body">
-                  <h3 class="card-title h5">Agency Website</h3>
-                  <p class="card-text text-muted small">
-                    Award-winning agency site with scroll-driven animations and
-                    3D elements.
-                  </p>
-                  <div class="d-flex flex-wrap gap-2">
-                    <span class="badge bg-primary-subtle text-primary"
-                      >Three.js</span
-                    >
-                    <span class="badge bg-primary-subtle text-primary"
-                      >GSAP</span
-                    >
-                  </div>
-                </div>
-              </article>
-            </div>
-
-            <!-- Project Card 5 -->
-            <div class="col-md-6 col-lg-4">
-              <article class="card project-card h-100 border-0 shadow-sm">
-                <div class="card-img-wrapper overflow-hidden">
-                  <img
-                    src="https://picsum.photos/400/300?random=5"
-                    class="card-img-top"
-                    alt="SaaS Platform"
-                  />
-                </div>
-                <div class="card-body">
-                  <h3 class="card-title h5">SaaS Platform</h3>
-                  <p class="card-text text-muted small">
-                    Multi-tenant SaaS with role-based access and subscription
-                    management.
-                  </p>
-                  <div class="d-flex flex-wrap gap-2">
-                    <span class="badge bg-primary-subtle text-primary"
-                      >Next.js</span
-                    >
-                    <span class="badge bg-primary-subtle text-primary"
-                      >Prisma</span
-                    >
-                  </div>
-                </div>
-              </article>
-            </div>
-
-            <!-- Project Card 6 -->
-            <div class="col-md-6 col-lg-4">
-              <article class="card project-card h-100 border-0 shadow-sm">
-                <div class="card-img-wrapper overflow-hidden">
-                  <img
-                    src="https://picsum.photos/400/300?random=6"
-                    class="card-img-top"
-                    alt="AI Tool"
-                  />
-                </div>
-                <div class="card-body">
-                  <h3 class="card-title h5">AI Content Generator</h3>
-                  <p class="card-text text-muted small">
-                    GPT-powered content creation tool with custom fine-tuning
-                    options.
-                  </p>
-                  <div class="d-flex flex-wrap gap-2">
-                    <span class="badge bg-primary-subtle text-primary"
-                      >OpenAI</span
-                    >
-                    <span class="badge bg-primary-subtle text-primary"
-                      >Python</span
-                    >
-                  </div>
-                </div>
-              </article>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Contact Section -->
-      <section id="contact" class="py-5 py-lg-6 bg-dark">
-        <div class="container">
-          <div class="row justify-content-center">
-            <div class="col-lg-8 text-center">
-              <h2 class="display-5 fw-bold mb-4 gsap-reveal">
-                Let's Work Together
-              </h2>
-              <p class="lead text-muted mb-5 gsap-reveal">
-                Have a project in mind? I'd love to hear about it. Let's create
-                something amazing.
-              </p>
-              <div class="gsap-reveal">
-                <a
-                  href="mailto:hello@example.com"
-                  class="btn btn-primary btn-lg mb-4"
-                >
-                  Start a Conversation
-                </a>
               </div>
-              <div
-                class="social-links gsap-reveal d-flex justify-content-center gap-4"
-              >
-                <a href="#" class="text-muted fs-4" aria-label="GitHub">
-                  <svg
-                    width="24"
-                    height="24"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
-                    />
-                  </svg>
-                </a>
-                <a href="#" class="text-muted fs-4" aria-label="LinkedIn">
-                  <svg
-                    width="24"
-                    height="24"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
-                    />
-                  </svg>
-                </a>
-                <a href="#" class="text-muted fs-4" aria-label="Twitter">
-                  <svg
-                    width="24"
-                    height="24"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"
-                    />
-                  </svg>
-                </a>
+            </div>
+
+            <!-- Imagen 2 -->
+            <div class="col-md-4 col-sm-6">
+              <div class="image-card">
+                <img
+                  src="https://ik.imagekit.io/nvzgvhlvdw/designfolio/maca"
+                  alt="Imagen 2"
+                />
+                <div class="overlay">
+                  <p class="overlay-text">
+                    La sesión narra la historia de Igone y Maca, quienes
+                    exploran su sexualidad juntas, enamorándose poco a poco y
+                    descubriendo la pasión de los primeros besos y caricias.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Imagen 3 -->
+            <div class="col-md-4 col-sm-6">
+              <div class="image-card">
+                <img
+                  src="https://ik.imagekit.io/nvzgvhlvdw/designfolio/izan"
+                  alt="Imagen 3"
+                />
+                <div class="overlay">
+                  <p class="overlay-text">
+                    Ian, un joven apasionado por el maquillaje, la moda y el
+                    Drag con su personaje Dorika, recibe apoyo de sus amigos
+                    pero rechazo de su familia, lo que lo enfrenta a un
+                    conflicto interno sobre quién quiere ser y quién “debe” ser.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
@@ -429,26 +289,51 @@
       </section>
     </main>
 
-    <!-- Footer -->
-    <footer class="py-4 text-center text-muted small">
-      <div class="container">
-        <p class="mb-0">
-          &copy; 2025 John Designer. Built with Bootstrap 5 + GSAP.
-        </p>
-      </div>
+    <!-- CONTACT -->
+    <footer>
+      <section id="contact" class="py-5 py-lg-6 bg-dark text-center">
+        <h2 class="gsap-reveal">Trabajemos juntas</h2>
+
+        <div class="d-flex justify-content-center gap-3">
+          <a
+            href="#"
+            class="btn btn-primary btn-lg"
+            style="font-family: 'Schoolbell', cursive"
+            >Instagram</a
+          >
+          <a
+            href="#"
+            class="btn btn-primary btn-lg"
+            style="font-family: 'Schoolbell', cursive"
+            >Behance</a
+          >
+          <a
+            href="#"
+            class="btn btn-primary btn-lg"
+            style="font-family: 'Schoolbell', cursive"
+            >LinkedIn</a
+          >
+        </div>
+        <div class="container text-center">
+          <p
+            class="mb-2"
+            style="
+              font-family: 'Schoolbell', cursive;
+              color: #ffffff;
+              font-size: 1.2rem;
+            "
+          >
+            © 2025 Dreamy Tarai
+          </p>
+        </div>
+      </section>
     </footer>
 
-    <!-- Bootstrap JS -->
+    <!-- JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-
-    <!-- GSAP + Plugins -->
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12/dist/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12/dist/ScrollTrigger.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12/dist/ScrollToPlugin.min.js"></script>
-    <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
-    <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
-
-    <!-- Custom Scripts -->
     <script src="assets/js/main.js" defer></script>
   </body>
 </html>

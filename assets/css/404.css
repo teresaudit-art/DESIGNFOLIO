@@ -1,0 +1,77 @@
+:root {
+  --pink: #ffb6d5;
+  --blue: #9fd9ff;
+}
+
+body {
+  min-height: 100vh;
+  font-family: Arial, Helvetica, sans-serif;
+  overflow: hidden;
+}
+/* FONDO DE NUBES */
+.floating-shapes {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.floating-shapes img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.error-wrapper {
+  z-index: 1; /* por encima del gif */
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+}
+
+.error-card {
+  z-index: 1; /* por encima del gif */
+  background: rgba(255, 182, 213, 0.9);
+  padding: 3rem 2.5rem;
+  border-radius: 24px;
+  max-width: 520px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.error-title {
+  font-family: "Schoolbell", cursive;
+  font-size: clamp(4rem, 8vw, 6rem);
+  color: var(--blue);
+  margin-bottom: 0.5rem;
+}
+
+.error-subtitle {
+  font-family: "Schoolbell", cursive;
+  font-size: 1.6rem;
+  color: #ffffff;
+  margin-bottom: 1rem;
+}
+
+.error-text {
+  color: #ffffff;
+  opacity: 0.85;
+  margin-bottom: 2rem;
+}
+
+.btn-home {
+  background: var(--blue);
+  border: none;
+  color: white;
+  font-family: "Schoolbell", cursive;
+  font-size: 1.1rem;
+  padding: 0.6rem 1.6rem;
+  border-radius: 30px;
+  transition: transform 0.3s;
+}
+
+.btn-home:hover {
+  transform: scale(1.05);
+  background: #ffc3dd;
+}
