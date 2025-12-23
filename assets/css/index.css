@@ -14,7 +14,7 @@
 
   /* Custom tokens */
   --color-bg-alt: rgb(156, 203, 248);
-  --color-muted: #6c757d;
+  --color-muted: #75f10f;
   --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
@@ -42,37 +42,50 @@ body {
 /* --------------------------------------------------------------------------
    3. Navigation
    -------------------------------------------------------------------------- */
-.navbar {
-  background: #ffb6d5;
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  transition: background 0.3s;
+.zara-nav {
+  background: transparent;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
 }
 
-.navbar.scrolled {
-  background: rgba(56, 139, 247, 0.95);
+.zara-nav.scrolled {
+  background: rgba(255, 182, 213, 0.95);
 }
 
-.nav-link {
-  position: relative;
-  padding: 0.5rem 1rem !important;
+/* Logo */
+.zara-nav .navbar-brand {
+  font-family: "Schoolbell", cursive;
+  font-size: 1.5rem;
+  letter-spacing: 0.05em;
+  color: #fff;
 }
 
-.nav-link::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  width: 0;
-  height: 2px;
-  background: var(--bs-primary);
-  transition: width 0.3s, left 0.3s;
+/* Menu desktop */
+.zara-menu .nav-link {
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #fff;
+  margin-left: 2rem;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-.nav-link:hover::after,
-.nav-link.active::after {
-  width: 100%;
-  left: 0;
+/* Burger */
+.navbar-toggler {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.zara-burger {
+  width: 22px;
+  height: 1px;
+  background: #fff;
+}
+
+/* Hover */
+.zara-menu .nav-link:hover {
+  opacity: 0.6;
 }
 
 /* --------------------------------------------------------------------------
@@ -90,6 +103,14 @@ body {
   background: inherit;
   z-index: 0;
 }
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(70, 130, 255, 0.35); /* azul suave */
+  z-index: 1;
+}
+
 .hero .container {
   position: relative;
   z-index: 2;
@@ -238,6 +259,34 @@ h1,
 /* --------------------------------------------------------------------------
    6. Projects Section
    -------------------------------------------------------------------------- */
+#projects-intro {
+  height: 100vh;
+  overflow: hidden;
+  background: white;
+}
+
+.project-slide {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+}
+
+.project-slide img {
+  max-height: 70vh;
+  object-fit: contain;
+}
+
+.project-slide h2 {
+  margin-top: 2rem;
+  font-size: 0.9rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+}
+
 .project-card {
   background: var(--color-bg-alt);
   border-radius: 1rem;

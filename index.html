@@ -16,22 +16,30 @@
   </head>
   <body data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="100">
     <!-- Navigation -->
-    <nav id="navbar" class="navbar navbar-expand-lg navbar-dark fixed-top">
-      <div class="container">
-        <a class="navbar-brand fw-bold" href="#">Portfolio</a>
+    <nav class="navbar navbar-expand-lg fixed-top zara-nav">
+      <div class="container-fluid px-4">
+        <!-- Burger -->
         <button
-          class="navbar-toggler"
+          class="navbar-toggler border-0"
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
+          aria-label="Menu"
         >
-          <span class="navbar-toggler-icon"></span>
+          <span class="zara-burger"></span>
+          <span class="zara-burger"></span>
+          <span class="zara-burger"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto">
+
+        <!-- Logo -->
+        <a class="navbar-brand mx-auto mx-lg-0" href="#hero"> Dreamy Tarai </a>
+
+        <!-- Menu -->
+        <div
+          class="collapse navbar-collapse justify-content-end"
+          id="navbarNav"
+        >
+          <ul class="navbar-nav zara-menu">
             <li class="nav-item"><a class="nav-link" href="#hero">Home</a></li>
             <li class="nav-item">
               <a class="nav-link" href="#about">About</a>
@@ -56,10 +64,12 @@
         <!-- Parallax Background -->
         <div class="hero-bg position-absolute w-100 h-100"></div>
 
+        <div class="hero-overlay"></div>
+
         <!-- Floating shapes (GSAP animated) -->
         <div class="floating-shapes">
           <img
-            src="https://ik.imagekit.io/nvzgvhlvdw/SAW%20PAGINA%20ANALISIS/Clouds.gif"
+            src="https://ik.imagekit.io/nvzgvhlvdw/SAW%20PAGINA%20ANALISIS/NUBES.gif"
           />
         </div>
 
@@ -148,6 +158,7 @@
       </section>
 
       <!-- Projects Section -->
+
       <section id="projects" class="py-5 py-lg-6">
         <div class="container">
           <div class="text-center mb-5">
@@ -156,6 +167,23 @@
               A selection of my recent work
             </p>
           </div>
+
+          <section id="projects-intro">
+            <div class="project-slide">
+              <img src="img/proyecto1.jpg" alt="Proyecto 1" />
+              <h2>Proyecto Twin Peaks</h2>
+            </div>
+
+            <div class="project-slide">
+              <img src="img/proyecto2.jpg" alt="Proyecto 2" />
+              <h2>Editorial Moda</h2>
+            </div>
+
+            <div class="project-slide">
+              <img src="img/proyecto3.jpg" alt="Proyecto 3" />
+              <h2>Dirección de Arte</h2>
+            </div>
+          </section>
 
           <div class="row g-4">
             <!-- Project Card 1 -->
@@ -417,6 +445,8 @@
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12/dist/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12/dist/ScrollTrigger.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12/dist/ScrollToPlugin.min.js"></script>
+    <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+    <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
 
     <!-- Custom Scripts -->
     <script src="assets/js/main.js" defer></script>
