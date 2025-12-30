@@ -1,6 +1,44 @@
+/* =========================
+   SISTEMA TIPOGRÁFICO FLUIDO
+   (BRIEF FASE 2)
+========================= */
+
 :root {
   --pink: #ffb6d5;
   --blue: #9fd9ff;
+  --text-xs: clamp(0.75rem, 0.7rem + 0.2vw, 0.85rem);
+  --text-sm: clamp(0.9rem, 0.85rem + 0.3vw, 1rem);
+  --text-base: clamp(1rem, 0.95rem + 0.4vw, 1.125rem);
+  --text-lg: clamp(1.2rem, 1.1rem + 0.6vw, 1.4rem);
+  --text-xl: clamp(1.5rem, 1.3rem + 1vw, 2rem);
+  --text-2xl: clamp(2.2rem, 4vw, 3.5rem);
+}
+
+body {
+  font-size: var(--text-base);
+}
+
+.hero-title {
+  font-size: var(--text-2xl);
+}
+
+.hero-subtitle {
+  font-size: var(--text-lg);
+}
+
+h2 {
+  margin-bottom: 0.8em;
+  font-size: var(--text-2xl);
+}
+
+h3 {
+  font-size: var(--text-xl);
+}
+
+.note-text p,
+.alicia,
+.overlay-text {
+  font-size: var(--text-sm);
 }
 
 body {
@@ -53,7 +91,15 @@ body {
 }
 
 .hero-overlay {
-  background: rgba(125, 163, 245, 0.3);
+  background: rgba(48, 154, 235, 0.252);
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.hero .container {
+  position: relative;
+  z-index: 2;
 }
 
 .floating-shapes img {
@@ -78,6 +124,7 @@ body {
 
 /* BUTTONS */
 .btn-primary {
+  margin-bottom: 0.8em;
   background: var(--pink);
   border: none;
   color: #7a2f4a;
@@ -239,13 +286,6 @@ h3 {
   justify-content: center; /* centra horizontalmente */
 }
 
-image-card {
-  position: relative;
-  overflow: hidden;
-  cursor: pointer;
-  border-radius: 10px; /* opcional, bordes redondeados */
-}
-
 .image-card {
   position: relative;
   overflow: hidden;
@@ -292,14 +332,39 @@ image-card {
   padding: 1em;
 }
 
-@media (max-width: 991px) {
+@media (max-width: 767px) {
+  /* NAV */
+  .navbar {
+    height: auto;
+  }
+
+  .navbar-brand {
+    font-size: 1.2rem;
+  }
+
+  /* HERO */
+  .hero-title {
+    font-size: clamp(2.4rem, 8vw, 3.2rem);
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .hero-cta .btn {
+    display: block;
+    width: 100%;
+    margin: 0.5rem 0;
+  }
+
+  /* ABOUT */
   #about .row {
     flex-direction: column;
     text-align: center;
   }
 
   .about-img {
-    max-width: 300px;
+    max-width: 260px;
     margin-bottom: 2rem;
   }
 
@@ -309,26 +374,162 @@ image-card {
   }
 
   .note-text {
-    top: 16%;
-    left: 10%;
-    right: 10%;
-    bottom: 16%;
+    inset: 12%;
+    padding: 4em;
   }
 
+  /* SKILLS */
+  .skills-wrapper,
+  .skill {
+    margin-left: 3em;
+    align-content: center;
+    max-width: 70%;
+  }
+
+  /* PROJECTS */
+
+  h2 {
+    font-size: 2.2rem;
+  }
+
+  h3 {
+    font-size: 1.2rem;
+  }
+
+  .note-text p,
+  .alicia,
+  .overlay-text {
+    margin-right: 1em;
+    margin-left: 1em;
+    text-align: justify;
+    font-size: 0.7em;
+  }
+
+  /* VIDEO */
+  video.loewe {
+    width: 100%;
+  }
+}
+
+@media (max-width: 991px) {
+  .note-text {
+    inset: 0;
+    padding: 6em;
+  }
+}
+
+@media (max-width: 1023px) {
+  /* HERO */
+
+  body {
+    overflow-x: hidden;
+  }
+  .hero-title {
+    font-size: clamp(3rem, 6vw, 4.2rem);
+  }
+
+  .hero-subtitle {
+    font-size: 1.1rem;
+  }
+
+  /* ABOUT */
+  .about-img {
+    max-width: 320px;
+  }
+
+  .note-wrapper {
+    max-width: 480px;
+    margin: 0 auto;
+  }
+  .note-text p {
+    inset: 0;
+  }
+  /* SKILLS */
   .skills-wrapper {
-    max-width: 100%;
+    max-width: 480px;
     margin: 0 auto;
   }
 
-  .skill {
+  /* PROJECTS */
+  #projects-intro {
+    position: static;
+    aspect-ratio: auto;
+    height: auto;
+    overflow: visible;
+  }
+
+  .project-slide {
+    position: relative;
+    opacity: 1 !important;
+    display: block;
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+
+  .project-slide img {
+    width: 100%;
+    height: auto;
     max-width: 100%;
+    display: block;
   }
 
-  .skill span {
-    font-size: 0.9rem;
+  .overlay-text {
+    text-align: justify;
+    font-size: 0.6em;
   }
 
-  .progress {
-    height: 5px;
+  h2 {
+    font-size: 2.8rem;
+  }
+
+  h3 {
+    font-size: 1.8rem;
+  }
+
+  video.loewe {
+    width: 80%;
+  }
+}
+@media (min-width: 1024px) {
+  /* HERO */
+  .hero-title {
+    font-size: clamp(4rem, 6vw, 6rem);
+  }
+
+  .hero-subtitle {
+    font-size: 1.3rem;
+  }
+
+  /* ABOUT */
+  .about-img {
+    max-width: 420px;
+  }
+
+  .note-wrapper {
+    max-width: 520px;
+  }
+
+  .skills-wrapper {
+    max-width: 420px;
+  }
+
+  /* PROJECTS */
+  h2 {
+    font-size: 3.5rem;
+  }
+
+  h3 {
+    font-size: 2rem;
+  }
+
+  video.loewe {
+    width: 60%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
   }
 }
